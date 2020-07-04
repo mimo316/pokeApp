@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+  }
+  
+  body{
+    font: 400 14px Roboto, sans-serif;
+    background: #f0f0f5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body,
+ul,
+li,
+p {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  font-size: 1.2rem;
+  font-family: Arial;
+}
+
+  img {
+    max-width: 100%;
+    display: block;
+  }
+
+  .search {
+      background-color: #282828;
+      height: 50px;
+      border: 2px solid;
+      padding: 10px 16px;
+  }
+
+  .search p {
+      font-size: 20px;
+      color: #fff;
+      justify-content: center;
+      align-items: center;
+  }
+
+  
+
+  .container {
+      display: flex;
+      background-color:#645544;
+      width: 100%;
+      min-height: 100vh;
+      max-height: 1000vh;
+  }
+
+  .containerCards {
+      display: flex;
+      width: 80%;
+      background-color: #7b6954;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: space-around;
+  }
+  .card {
+    width: 40%;
+    margin: 20px 10px;
+    max-width: 200px;
+  }
+  .pokeCart {
+    width: 20%;
+    display: flex;
+  }
+
+  .cart {
+    height: 380px;
+    border: 1px solid black;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 40px;
+  }
+  

@@ -1,25 +1,74 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import './styles.css';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <>
+      <header>
+        <div className="search">
+            <p>PegPese</p>
+        </div>
       </header>
-    </div>
+
+      <body>
+        <div className="container">
+          <div className="containerCards">
+
+            <div className="card">
+              <img
+                src="https://images.unsplash.com/photo-1590165482129-1b8b27698780?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=564&q=80" />
+              <p>PegPese</p>
+            </div>
+
+            <div className="card">
+              <img
+                src="https://images.unsplash.com/photo-1590165482129-1b8b27698780?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=564&q=80" />
+              <p>PegPese</p>
+            </div>
+
+            <div className="card">
+              <img
+                src="https://images.unsplash.com/photo-1590165482129-1b8b27698780?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=564&q=80" />
+              <p>PegPese</p>
+            </div>
+
+            <div className="card">
+              <img
+                src="https://images.unsplash.com/photo-1590165482129-1b8b27698780?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=564&q=80" />
+              <p>PegPese</p>
+            </div>
+
+            <div className="card">
+              <img
+                src="https://images.unsplash.com/photo-1590165482129-1b8b27698780?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=564&q=80" />
+              <p>PegPese</p>
+            </div>
+
+            <div className="card">
+              <img
+                src="https://images.unsplash.com/photo-1590165482129-1b8b27698780?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=564&q=80" />
+              <p>PegPese</p>
+            </div>
+
+          </div>
+
+
+
+          <div className="pokeCart">
+            <div className="cart">
+              <ul>
+                <li>
+                  <strong>photo</strong>
+                  <strong>Nome</strong>
+                  <strong>Preço</strong>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </body>
+
+    </>
   );
 }
 
