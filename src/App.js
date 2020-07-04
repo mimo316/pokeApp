@@ -3,9 +3,9 @@ import './styles.css';
 function App() {
   return (
     <>
-      <header>
-        <div className="search">
-            <p>PegPese</p>
+      <header className="search">
+        <div className="headerItens">
+          <p>PegPese</p>
         </div>
       </header>
 
@@ -15,38 +15,64 @@ function App() {
 
             <div className="card">
               <img
-                src="https://images.unsplash.com/photo-1590165482129-1b8b27698780?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=564&q=80" />
-              <p>PegPese</p>
+                src="https://images.unsplash.com/photo-1585251310116-a8e0cd51d73b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+              />
+              <div class="descriptionCard">
+                <p>Architect & Engineer</p>
+              </div>
             </div>
 
             <div className="card">
               <img
-                src="https://images.unsplash.com/photo-1590165482129-1b8b27698780?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=564&q=80" />
-              <p>PegPese</p>
+                src="https://images.unsplash.com/photo-1585251310116-a8e0cd51d73b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+              />
+              <div class="descriptionCard">
+                <p>Architect & Engineer</p>
+              </div>
             </div>
 
             <div className="card">
               <img
-                src="https://images.unsplash.com/photo-1590165482129-1b8b27698780?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=564&q=80" />
-              <p>PegPese</p>
+                src="https://images.unsplash.com/photo-1585251310116-a8e0cd51d73b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+              />
+              <div class="descriptionCard">
+                <p>Architect & Engineer</p>
+              </div>
             </div>
 
             <div className="card">
               <img
-                src="https://images.unsplash.com/photo-1590165482129-1b8b27698780?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=564&q=80" />
-              <p>PegPese</p>
+                src="https://images.unsplash.com/photo-1585251310116-a8e0cd51d73b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+              />
+              <div class="descriptionCard">
+                <p>Architect & Engineer</p>
+              </div>
             </div>
 
             <div className="card">
               <img
-                src="https://images.unsplash.com/photo-1590165482129-1b8b27698780?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=564&q=80" />
-              <p>PegPese</p>
+                src="https://images.unsplash.com/photo-1585251310116-a8e0cd51d73b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+              />
+              <div class="descriptionCard">
+                <p>Architect & Engineer</p>
+              </div>
             </div>
 
             <div className="card">
               <img
-                src="https://images.unsplash.com/photo-1590165482129-1b8b27698780?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=564&q=80" />
-              <p>PegPese</p>
+                src="https://images.unsplash.com/photo-1585251310116-a8e0cd51d73b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+              />
+              <div class="descriptionCard">
+                <p>Architect & Engineer</p>
+              </div>
+            </div>
+            <div className="card">
+              <img
+                src="https://images.unsplash.com/photo-1585251310116-a8e0cd51d73b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+              />
+              <div class="descriptionCard">
+                <p>Architect & Engineer</p>
+              </div>
             </div>
 
           </div>
@@ -55,13 +81,74 @@ function App() {
 
           <div className="pokeCart">
             <div className="cart">
+              <div className="headerCart">
+                <h2>Carrinho</h2>
+              </div>
+
+              <div className="itemsCard">
               <ul>
-                <li>
-                  <strong>photo</strong>
+
+                <li className="carrinho-lista">
+                  <div className="imgCart">
+                    <img src="https://vignette.wikia.nocookie.net/sonicpokemon/images/a/a2/155_cyndaquil_by_pklucario.png/revision/latest/scale-to-width-down/250?cb=20130617041606" />
+                  </div>
                   <strong>Nome</strong>
                   <strong>Preço</strong>
                 </li>
+
+                <li className="carrinho-lista">
+                  <div className="imgCart">
+                    <img src="https://vignette.wikia.nocookie.net/sonicpokemon/images/a/a2/155_cyndaquil_by_pklucario.png/revision/latest/scale-to-width-down/250?cb=20130617041606" />
+                  </div>
+                  <strong>Nome</strong>
+                  <strong>Preço</strong>
+                </li>
+
+                <li className="carrinho-lista">
+                  <div className="imgCart">
+                    <img src="https://vignette.wikia.nocookie.net/sonicpokemon/images/a/a2/155_cyndaquil_by_pklucario.png/revision/latest/scale-to-width-down/250?cb=20130617041606" />
+                  </div>
+                  <strong>Nome</strong>
+                  <strong>Preço</strong>
+                </li>
+
+                <li className="carrinho-lista">
+                  <div className="imgCart">
+                    <img src="https://vignette.wikia.nocookie.net/sonicpokemon/images/a/a2/155_cyndaquil_by_pklucario.png/revision/latest/scale-to-width-down/250?cb=20130617041606" />
+                  </div>
+                  <strong>Nome</strong>
+                  <strong>Preço</strong>
+                </li>
+
+                <li className="carrinho-lista">
+                  <div className="imgCart">
+                    <img src="https://vignette.wikia.nocookie.net/sonicpokemon/images/a/a2/155_cyndaquil_by_pklucario.png/revision/latest/scale-to-width-down/250?cb=20130617041606" />
+                  </div>
+                  <strong>Nome</strong>
+                  <strong>Preço</strong>
+                </li>
+
+              
               </ul>
+              </div>
+
+              
+              <div className="cartTotal">
+                <strong>
+                  Total
+                </strong>
+                <div>
+                  ->
+                </div>
+                <strong>
+                  R$ 30.00
+                </strong>
+              </div>
+
+              <div className="buttonCart">
+              <button type="submit" className="button">Finalizar</button>
+              </div>
+
             </div>
 
           </div>
