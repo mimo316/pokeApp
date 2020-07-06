@@ -1,6 +1,25 @@
-import React from 'react';
+import React, { useEffect,useState } from 'react';
 import './styles.css';
+import api from './services/api';
+
+
+
+
 function App() {
+
+  const [pokemon, setPokemon] = useState({})
+
+  useEffect(() => {
+    async function getPokemon() {
+      const response = await api.get('/pokemon')
+      const base = (response.data.results)
+      
+      base.forEach(element => {
+          api.get(element.url).then(x => console.log(x.data))
+      });
+    }
+    getPokemon()
+  }, [])
   return (
     <>
       <header className="search">
@@ -17,7 +36,7 @@ function App() {
               <img
                 src="https://images.unsplash.com/photo-1585251310116-a8e0cd51d73b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
               />
-              <div class="descriptionCard">
+              <div className="descriptionCard">
                 <p>Architect & Engineer</p>
               </div>
             </div>
@@ -26,7 +45,7 @@ function App() {
               <img
                 src="https://images.unsplash.com/photo-1585251310116-a8e0cd51d73b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
               />
-              <div class="descriptionCard">
+              <div className="descriptionCard">
                 <p>Architect & Engineer</p>
               </div>
             </div>
@@ -35,7 +54,7 @@ function App() {
               <img
                 src="https://images.unsplash.com/photo-1585251310116-a8e0cd51d73b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
               />
-              <div class="descriptionCard">
+              <div className="descriptionCard">
                 <p>Architect & Engineer</p>
               </div>
             </div>
@@ -44,7 +63,7 @@ function App() {
               <img
                 src="https://images.unsplash.com/photo-1585251310116-a8e0cd51d73b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
               />
-              <div class="descriptionCard">
+              <div className="descriptionCard">
                 <p>Architect & Engineer</p>
               </div>
             </div>
@@ -53,7 +72,7 @@ function App() {
               <img
                 src="https://images.unsplash.com/photo-1585251310116-a8e0cd51d73b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
               />
-              <div class="descriptionCard">
+              <div className="descriptionCard">
                 <p>Architect & Engineer</p>
               </div>
             </div>
@@ -62,7 +81,7 @@ function App() {
               <img
                 src="https://images.unsplash.com/photo-1585251310116-a8e0cd51d73b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
               />
-              <div class="descriptionCard">
+              <div className="descriptionCard">
                 <p>Architect & Engineer</p>
               </div>
             </div>
@@ -70,7 +89,7 @@ function App() {
               <img
                 src="https://images.unsplash.com/photo-1585251310116-a8e0cd51d73b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
               />
-              <div class="descriptionCard">
+              <div className="descriptionCard">
                 <p>Architect & Engineer</p>
               </div>
             </div>
@@ -86,53 +105,53 @@ function App() {
               </div>
 
               <div className="itemsCard">
-              <ul>
+                <ul>
 
-                <li className="carrinho-lista">
-                  <div className="imgCart">
-                    <img src="https://vignette.wikia.nocookie.net/sonicpokemon/images/a/a2/155_cyndaquil_by_pklucario.png/revision/latest/scale-to-width-down/250?cb=20130617041606" />
-                  </div>
-                  <strong>Nome</strong>
-                  <strong>Preço</strong>
-                </li>
+                  <li className="carrinho-lista">
+                    <div className="imgCart">
+                      <img src="https://vignette.wikia.nocookie.net/sonicpokemon/images/a/a2/155_cyndaquil_by_pklucario.png/revision/latest/scale-to-width-down/250?cb=20130617041606" />
+                    </div>
+                    <strong>Nome</strong>
+                    <strong>Preço</strong>
+                  </li>
 
-                <li className="carrinho-lista">
-                  <div className="imgCart">
-                    <img src="https://vignette.wikia.nocookie.net/sonicpokemon/images/a/a2/155_cyndaquil_by_pklucario.png/revision/latest/scale-to-width-down/250?cb=20130617041606" />
-                  </div>
-                  <strong>Nome</strong>
-                  <strong>Preço</strong>
-                </li>
+                  <li className="carrinho-lista">
+                    <div className="imgCart">
+                      <img src="https://vignette.wikia.nocookie.net/sonicpokemon/images/a/a2/155_cyndaquil_by_pklucario.png/revision/latest/scale-to-width-down/250?cb=20130617041606" />
+                    </div>
+                    <strong>Nome</strong>
+                    <strong>Preço</strong>
+                  </li>
 
-                <li className="carrinho-lista">
-                  <div className="imgCart">
-                    <img src="https://vignette.wikia.nocookie.net/sonicpokemon/images/a/a2/155_cyndaquil_by_pklucario.png/revision/latest/scale-to-width-down/250?cb=20130617041606" />
-                  </div>
-                  <strong>Nome</strong>
-                  <strong>Preço</strong>
-                </li>
+                  <li className="carrinho-lista">
+                    <div className="imgCart">
+                      <img src="https://vignette.wikia.nocookie.net/sonicpokemon/images/a/a2/155_cyndaquil_by_pklucario.png/revision/latest/scale-to-width-down/250?cb=20130617041606" />
+                    </div>
+                    <strong>Nome</strong>
+                    <strong>Preço</strong>
+                  </li>
 
-                <li className="carrinho-lista">
-                  <div className="imgCart">
-                    <img src="https://vignette.wikia.nocookie.net/sonicpokemon/images/a/a2/155_cyndaquil_by_pklucario.png/revision/latest/scale-to-width-down/250?cb=20130617041606" />
-                  </div>
-                  <strong>Nome</strong>
-                  <strong>Preço</strong>
-                </li>
+                  <li className="carrinho-lista">
+                    <div className="imgCart">
+                      <img src="https://vignette.wikia.nocookie.net/sonicpokemon/images/a/a2/155_cyndaquil_by_pklucario.png/revision/latest/scale-to-width-down/250?cb=20130617041606" />
+                    </div>
+                    <strong>Nome</strong>
+                    <strong>Preço</strong>
+                  </li>
 
-                <li className="carrinho-lista">
-                  <div className="imgCart">
-                    <img src="https://vignette.wikia.nocookie.net/sonicpokemon/images/a/a2/155_cyndaquil_by_pklucario.png/revision/latest/scale-to-width-down/250?cb=20130617041606" />
-                  </div>
-                  <strong>Nome</strong>
-                  <strong>Preço</strong>
-                </li>
+                  <li className="carrinho-lista">
+                    <div className="imgCart">
+                      <img src="https://vignette.wikia.nocookie.net/sonicpokemon/images/a/a2/155_cyndaquil_by_pklucario.png/revision/latest/scale-to-width-down/250?cb=20130617041606" />
+                    </div>
+                    <strong>Nome</strong>
+                    <strong>Preço</strong>
+                  </li>
 
-              
-              </ul>
+
+                </ul>
               </div>
 
-              
+
               <div className="cartTotal">
                 <strong>
                   Total
@@ -146,7 +165,7 @@ function App() {
               </div>
 
               <div className="buttonCart">
-              <button type="submit" className="button">Finalizar</button>
+                <button type="submit" className="button">Finalizar</button>
               </div>
 
             </div>
