@@ -1,25 +1,37 @@
-import React, { useEffect,useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './styles.css';
 import api from './services/api';
 
-
+import Pokecard from './components/Pokecard';
 
 
 function App() {
 
-  const [pokemon, setPokemon] = useState({})
+  const [allPokemon, setAllPokemon] = useState([])
+  const [url, setUrl] = useState({})
+  const [pokemon, setPokemon] = useState([])
+  const [data, setData] = useState([])
+  const [page, setPage] = useState(21)
+  const [cardData, setCardData] = useState([])
+  const [total, setTotal] = useState(0)
 
   useEffect(() => {
     async function getPokemon() {
-      const response = await api.get('/pokemon')
-      const base = (response.data.results)
-      
-      base.forEach(element => {
-          api.get(element.url).then(x => console.log(x.data))
-      });
+      const response = await api.get(`/pokemon?limit=${42}`)
+      setAllPokemon(response.data.results)
     }
     getPokemon()
   }, [])
+
+  const addTocart = ({ id, name, price }) => {
+    setCardData([...cardData, {id: id, name: name, price: price }])
+    getTotal(price)
+  }
+
+  function getTotal(price) {
+    setTotal(total + price) 
+  }
+  
   return (
     <>
       <header className="search">
@@ -30,70 +42,11 @@ function App() {
 
       <body>
         <div className="container">
+
           <div className="containerCards">
-
-            <div className="card">
-              <img
-                src="https://images.unsplash.com/photo-1585251310116-a8e0cd51d73b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
-              />
-              <div className="descriptionCard">
-                <p>Architect & Engineer</p>
-              </div>
-            </div>
-
-            <div className="card">
-              <img
-                src="https://images.unsplash.com/photo-1585251310116-a8e0cd51d73b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
-              />
-              <div className="descriptionCard">
-                <p>Architect & Engineer</p>
-              </div>
-            </div>
-
-            <div className="card">
-              <img
-                src="https://images.unsplash.com/photo-1585251310116-a8e0cd51d73b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
-              />
-              <div className="descriptionCard">
-                <p>Architect & Engineer</p>
-              </div>
-            </div>
-
-            <div className="card">
-              <img
-                src="https://images.unsplash.com/photo-1585251310116-a8e0cd51d73b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
-              />
-              <div className="descriptionCard">
-                <p>Architect & Engineer</p>
-              </div>
-            </div>
-
-            <div className="card">
-              <img
-                src="https://images.unsplash.com/photo-1585251310116-a8e0cd51d73b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
-              />
-              <div className="descriptionCard">
-                <p>Architect & Engineer</p>
-              </div>
-            </div>
-
-            <div className="card">
-              <img
-                src="https://images.unsplash.com/photo-1585251310116-a8e0cd51d73b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
-              />
-              <div className="descriptionCard">
-                <p>Architect & Engineer</p>
-              </div>
-            </div>
-            <div className="card">
-              <img
-                src="https://images.unsplash.com/photo-1585251310116-a8e0cd51d73b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
-              />
-              <div className="descriptionCard">
-                <p>Architect & Engineer</p>
-              </div>
-            </div>
-
+            {allPokemon.map(
+              data => <Pokecard data={data} key={data.name} addTocart={addTocart} />
+            )}
           </div>
 
 
@@ -106,51 +59,17 @@ function App() {
 
               <div className="itemsCard">
                 <ul>
-
-                  <li className="carrinho-lista">
-                    <div className="imgCart">
-                      <img src="https://vignette.wikia.nocookie.net/sonicpokemon/images/a/a2/155_cyndaquil_by_pklucario.png/revision/latest/scale-to-width-down/250?cb=20130617041606" />
-                    </div>
-                    <strong>Nome</strong>
-                    <strong>Preço</strong>
-                  </li>
-
-                  <li className="carrinho-lista">
-                    <div className="imgCart">
-                      <img src="https://vignette.wikia.nocookie.net/sonicpokemon/images/a/a2/155_cyndaquil_by_pklucario.png/revision/latest/scale-to-width-down/250?cb=20130617041606" />
-                    </div>
-                    <strong>Nome</strong>
-                    <strong>Preço</strong>
-                  </li>
-
-                  <li className="carrinho-lista">
-                    <div className="imgCart">
-                      <img src="https://vignette.wikia.nocookie.net/sonicpokemon/images/a/a2/155_cyndaquil_by_pklucario.png/revision/latest/scale-to-width-down/250?cb=20130617041606" />
-                    </div>
-                    <strong>Nome</strong>
-                    <strong>Preço</strong>
-                  </li>
-
-                  <li className="carrinho-lista">
-                    <div className="imgCart">
-                      <img src="https://vignette.wikia.nocookie.net/sonicpokemon/images/a/a2/155_cyndaquil_by_pklucario.png/revision/latest/scale-to-width-down/250?cb=20130617041606" />
-                    </div>
-                    <strong>Nome</strong>
-                    <strong>Preço</strong>
-                  </li>
-
-                  <li className="carrinho-lista">
-                    <div className="imgCart">
-                      <img src="https://vignette.wikia.nocookie.net/sonicpokemon/images/a/a2/155_cyndaquil_by_pklucario.png/revision/latest/scale-to-width-down/250?cb=20130617041606" />
-                    </div>
-                    <strong>Nome</strong>
-                    <strong>Preço</strong>
-                  </li>
-
-
+                  {cardData.map(item =>
+                    <li className="carrinho-lista">
+                      <div className="imgCart">
+                        <img src={`https://pokeres.bastionbot.org/images/pokemon/${item.id}.png`} />
+                      </div>
+                      <strong>{item.name}</strong>
+                      <p>{Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(item.price)}</p>
+                    </li>
+                  )}
                 </ul>
               </div>
-
 
               <div className="cartTotal">
                 <strong>
@@ -160,12 +79,12 @@ function App() {
                   ->
                 </div>
                 <strong>
-                  R$ 30.00
+                  <p>{Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(total)}</p>
                 </strong>
               </div>
 
               <div className="buttonCart">
-                <button type="submit" className="button">Finalizar</button>
+                <button type="submit" className="button" onClick={() => console.log('clicado')}>Finalizar</button>
               </div>
 
             </div>
