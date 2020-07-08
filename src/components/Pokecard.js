@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import '../styles.css';
+import './style.css';
 export default function Pokecard({data, addTocart}) {
 
   const [pokemon, setPokemon] = useState([])
@@ -14,9 +14,6 @@ export default function Pokecard({data, addTocart}) {
 
     getPokemonData(data.url)
   }, [])
-
-
-
     return (
         <div className="card">
          <img
@@ -24,10 +21,15 @@ export default function Pokecard({data, addTocart}) {
          />
          <div className="descriptionCard">
            <p>{data.name}</p>
+           <p>{Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(pokemon.weight)}</p>
          </div>
+         <div className="button_card">
           <button 
+            className="button"
             onClick={() => addTocart({id:pokemon.id, name:data.name, price: pokemon.weight})}
-            id="cart">Adicionar ao Carrinho</button>
+            id="cart">Adicionar ao Carrinho
+          </button>
+         </div>
        </div>
     )
 }
